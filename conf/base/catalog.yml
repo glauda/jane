@@ -1,0 +1,34 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://kedro.readthedocs.io/en/stable/data/data_catalog.html
+
+# Scraping
+medium_extract:
+  type: pandas.ParquetDataSet
+  filepath: data/01_raw/medium_extract.parquet
+
+# Preprocessing
+preprocessed_articles:
+  type: pandas.ParquetDataSet
+  filepath: data/03_primary/articles.parquet
+
+# Training
+training:
+  type: pandas.ParquetDataSet
+  filepath: data/05_model_input/train.parquet
+
+test:
+  type: pandas.ParquetDataSet
+  filepath: data/05_model_input/test.parquet
+
+model_tf_idf:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/tf_idf.pkl
+  backend: joblib
+
+# Prediction
+test_predictions:
+  type: pickle.PickleDataSet
+  filepath: data/07_model_output/test_predictions.pkl
+  backend: joblib

@@ -1,0 +1,16 @@
+# Scraping
+start_date: 2021-01-01
+end_date: 2022-01-01
+nb_iteration: 50
+seed: 12345
+base_url:
+  - https://towardsdatascience.com
+
+# Preprocessing
+threshold_len: 2
+
+# Training
+test_size: 0.2
+
+# Prediction
+n_topics: 5
